@@ -6,7 +6,7 @@ const Post = (props) => {
                 <img src="https://img3.goodfon.ru/original/1920x1080/3/51/avatar-neytiri-zoe-saldana-6192.jpg"/>
                 { props.message }
                 <div>
-                    <span>like</span>
+                    <span>like { props.likesCount }</span>
                 </div>
                 
             </div>;

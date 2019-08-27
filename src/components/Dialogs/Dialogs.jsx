@@ -8,31 +8,41 @@ const DialogItem = (props) => {
     </div>;
 }
 
+const Message = (props) => {
+    return (
+        <div className={s.message}>{props.message}</div>
+    );
+}
+
+let dialogsData = [
+    {id: 1, name: 'Dimych'},
+    {id: 2, name: 'Andrey'},
+    {id: 3, name: 'Sveta'},
+    {id: 4, name: 'Sasha'},
+    {id: 5, name: 'Viktor'},
+    {id: 6, name: 'Valera'},
+];
+
+let messagesData = [
+    {id: 1, message: 'Hi'},
+    {id: 2, message: 'How is your it-kamasutra?'},
+    {id: 3, message: 'Yo!'},
+    {id: 4, message: 'Yo!'},
+    {id: 5, message: 'Yo!'}
+];
+
 const Dialogs = (props) => {
     return (
             <div className={s.dialogs}>
                 <div className={s.dialogsItems}>
-                    <DialogItem name="Dimych" id="1" />
-                    <div className={s.dialog}>
-                        <NavLink to="/dialogs/2">Andrey</NavLink>
-                    </div>
-                    <div className={s.dialog}>
-                        <NavLink to="/dialogs/3">Sveta</NavLink>
-                    </div>
-                    <div className={s.dialog}>
-                        <NavLink to="/dialogs/4">Sasha</NavLink>
-                    </div>
-                    <div className={s.dialog}>
-                        <NavLink to="/dialogs/5">Viktor</NavLink>
-                    </div>
-                    <div className={s.dialog}>
-                        <NavLink to="/dialogs/6">Valera</NavLink>
-                    </div>
+                    {dialogsData.map((item, i) => {
+                        return(<DialogItem key={i} name={item.name} id={item.id}/>);
+                    })}
                 </div>
                 <div className={s.messages}>
-                    <div className={s.message}>Hi</div>
-                    <div className={s.message}>How is your it-kamasutra?</div>
-                    <div className={s.message}>Yo!</div>
+                    {messagesData.map((item, i) => {
+                        return(<Message key={i} message={item.message} id={item.id}/>);
+                    })}
                 </div>
             </div>
     )
