@@ -1,6 +1,5 @@
 import React from 'react';
 import {BrowserRouter, Route} from 'react-router-dom';
-//import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
@@ -19,7 +18,9 @@ const App = (props) => {
               state={props.state.dialogsPage} />} />
           <Route path='/profile' 
             render={ () => <Profile 
-              state={props.state.profilePage} addPost={props.addPost} />} />
+              profilePage={props.state.profilePage} 
+              addPost={props.addPost}  
+              updateNewPostText = {props.updateNewPostText} />} />
         </div>
       </div>
     </BrowserRouter>
