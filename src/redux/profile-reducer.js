@@ -2,7 +2,6 @@ const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 
 let initialState = {
-    profilePage: {
         posts: [
             {id: 1, message: 'Hi, how are you?', likesCount: 1},
             {id: 2, message: "It's my first post", likesCount: 23},
@@ -10,7 +9,6 @@ let initialState = {
             {id: 4, message: "Dada", likesCount: 11}
         ],
         newPostText: "itkamasutra"
-    }
 };
 
 const profileReducer = (state = initialState, action) => {
