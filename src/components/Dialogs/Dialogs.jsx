@@ -6,19 +6,17 @@ import { updateNewMessageTextActionCreator, sendMessageActionCreator } from '../
 
 const Dialogs = (props) => {
 
-    //let state = props.getState().dialogsPage;
-
     let dialogsElements = props.state.dialogs
     .map( dialog => <DialogItem name={dialog.name} id={dialog.id} /> );
     let messagesElements = props.state.messages
     .map( message => <Message message={message.message} id={message.id}/> );
     let newMessageText = props.state.newMessageText;
     let onSendMessageClick = () => {
-        props.store.dispatch(sendMessageActionCreator());
+        props.sendMessage();
     }
     let onMessageChange = (e) => {
         let text = e.target.value;
-        props.store.dispatch(updateNewMessageTextActionCreator(text));
+        props.updateNewMessageText(text);
     }
 
     return (
