@@ -4,6 +4,7 @@ import Axios from 'axios';
 import userPhoto from '../../assets/images/ava.png';
 
 let Users = (props) => {
+    let getUsers = () => {
     if(props.users.length === 0) {
         Axios.get('https://social-network.samuraijs.com/api/1.0/users')
             .then(response => {
@@ -11,7 +12,9 @@ let Users = (props) => {
                 props.setUsers(response.data.items);
             });
     }
+    }
     return <div>
+        <button onClick={getUsers}>Get Users</button>
         {props.users.map(u => <div key={u.id} >
             <span>
                 <div>
