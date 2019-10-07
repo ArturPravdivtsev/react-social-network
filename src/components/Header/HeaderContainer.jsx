@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './Header';
 import Axios from 'axios';
 import { connect } from 'react-redux';
+import { setAuthUsersData } from '../../redux/auth-reducer';
 
 class HeaderContainer extends React.Component {
     componentDidMount() {
